@@ -146,6 +146,18 @@
       <Project>{E86D407B-138F-4A06-B14E-48044DF57E1E}</Project>
       <Name>Caching</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{459E4C84-F18B-417A-9443-76306EB0FEE0}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{C55A978C-B102-41B7-85D2-6522F10F7D02}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj">
+      <Project>{99BA4174-027A-459D-8121-AC0D346B780C}</Project>
+      <Name>UnitOfWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
