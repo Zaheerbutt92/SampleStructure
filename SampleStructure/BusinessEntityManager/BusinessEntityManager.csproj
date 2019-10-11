@@ -50,15 +50,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
-      <Project>{2d8c2d5f-389c-4fb0-840b-8f86351518b9}</Project>
+      <Project>{2D8C2D5F-389C-4FB0-840B-8F86351518B9}</Project>
       <Name>BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericRepository\GenericRepository.csproj">
+      <Project>{C988C3DF-D326-421B-AAF1-25A780EA6006}</Project>
+      <Name>GenericRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{459E4C84-F18B-417A-9443-76306EB0FEE0}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj">
+      <Project>{99ba4174-027a-459d-8121-ac0d346b780c}</Project>
+      <Name>UnitOfWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{4CD5DDA0-8153-42E8-A24D-FE4E2F2F8070}</Project>
+      <Name>ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

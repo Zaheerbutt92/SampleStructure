@@ -46,12 +46,6 @@
       <HintPath>..\packages\Cquential.Microsoft.Practices.Unity.2.0.414\lib\net35\Microsoft.Practices.Unity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>..\..\..\Insurance Authority\FollowUp and Enforcement\IA.FE.Bootstraper\bin\Release\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
-      <HintPath>..\..\..\Insurance Authority\FollowUp and Enforcement\IA.FE.Bootstraper\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -142,9 +136,17 @@
     <Compile Include="UnityIOC.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessEntityManager\BusinessEntityManager.csproj">
+      <Project>{FCCE4151-2B64-44A9-84E7-10C7470F7C64}</Project>
+      <Name>BusinessEntityManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Caching\Caching.csproj">
       <Project>{E86D407B-138F-4A06-B14E-48044DF57E1E}</Project>
       <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{0F850B5D-2014-4BE8-BDA5-1BD625BC1D22}</Project>
+      <Name>Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{459E4C84-F18B-417A-9443-76306EB0FEE0}</Project>
@@ -160,8 +162,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

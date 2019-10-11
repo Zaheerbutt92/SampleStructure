@@ -1,4 +1,5 @@
-﻿using GenericRepository;
+﻿using BusinessEntities;
+using GenericRepository;
 using Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace UnitOfWork
         private bool _disposed;
         private readonly IDbContext _dbContext;
 
-        private Lazy<GenericRepository<Consultation>> _consultation;
+        private Lazy<GenericRepository<User>> _user;
         
 
         #endregion
@@ -34,7 +35,7 @@ namespace UnitOfWork
 
 
         #region Properties
-        public IGenericRepository<Consultation> Consultation { get { return _consultation.Value; } }
+        public IGenericRepository<User> User { get { return _user.Value; } }
 
         #endregion
        
@@ -43,7 +44,7 @@ namespace UnitOfWork
         private void CreateRepositories()
         {
 
-            _consultation = CreateLazyRepository<Consultation>();
+            _user = CreateLazyRepository<User>();
 
         }
         private Lazy<GenericRepository<T>> CreateLazyRepository<T>()

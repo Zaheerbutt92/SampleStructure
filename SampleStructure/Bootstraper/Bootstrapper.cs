@@ -1,4 +1,6 @@
-﻿using Caching;
+﻿using BusinessEntityManager;
+using Caching;
+using Database;
 using Interfaces;
 using Logging;
 using System;
@@ -37,14 +39,14 @@ namespace Bootstraper
             container.RegisterType<ILogger, Log4NetLoggerManager>();
             //container.RegisterType<IEmail, Email.Email>();
             ////container.RegisterType<ISms, Sms.Sms>();
-            container.RegisterType<IDbContext, LC_DEVEntities>();
+            container.RegisterType<IDbContext, SampleEntities>();
             container.RegisterType<IGenericUnitOfWork, GenericUnitOfWork>();
             //container.RegisterType<ISharedManager, SharedManager>();
             //container.RegisterType<IHttpHandler, HttpHandleManager>();
             container.RegisterType<ICacheProvider, DefaultCacheProvider>();
 
             //#region Managers
-            //container.RegisterType<ILegalConsultancyManager, LegalConsultancyManager>();
+            container.RegisterType<IUserManager, UserManager>();
             //container.RegisterType<ILookUpManager, LookUpManager>();
             //#endregion
 

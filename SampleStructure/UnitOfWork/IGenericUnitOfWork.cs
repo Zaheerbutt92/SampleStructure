@@ -1,4 +1,5 @@
-﻿using GenericRepository;
+﻿using BusinessEntities;
+using GenericRepository;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,7 +11,7 @@ namespace UnitOfWork
 {
     public interface IGenericUnitOfWork : IDisposable
     {
-        IGenericRepository<Consultation> Consultation { get; }
+        IGenericRepository<User> User { get; }
         
 
         void Save();
