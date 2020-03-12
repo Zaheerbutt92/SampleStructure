@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDbContext.cs" />
+    <Compile Include="IHttpHandler.cs" />
     <Compile Include="IUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

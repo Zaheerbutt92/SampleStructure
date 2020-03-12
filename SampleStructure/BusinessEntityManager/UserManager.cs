@@ -1,5 +1,6 @@
 ﻿using BusinessEntities;
 using Interfaces;
+using Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,20 @@ namespace BusinessEntityManager
 {
     public class UserManager : IUserManager
     {
-        private IGenericUnitOfWork _user_repository { get; }
+        #region Properties
+        private readonly IGenericUnitOfWork _user_repository;
+        private readonly ILogger _logger;
+        #endregion
 
-        public UserManager(IGenericUnitOfWork userRepository)
+        #region Constructor
+        public UserManager(IGenericUnitOfWork userRepository, ILogger logger)
         {
             _user_repository = userRepository;
+            _logger = logger;
         }
+        #endregion
 
-        public Response<List<User>> GetAllUsers()
+        Response<List<User>> IUserManager.GetAllUsers()
         {
             var response = new Response<List<User>>();
             try
@@ -39,6 +46,7 @@ namespace BusinessEntityManager
             }
             catch (Exception ex)
             {
+                _logger.Error(ex);
                 response.StatusCode = 505;
                 response.Message = "System Error";
             }

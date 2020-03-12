@@ -24,7 +24,7 @@ namespace AutoMapper
 
 
 
-                #region Lookup
+                #region LookUps
                //cfg.CreateMap<Rejection_Reason, LookupVM>().ReverseMap();
 
                 #endregion
